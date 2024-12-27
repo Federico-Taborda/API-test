@@ -5,7 +5,7 @@ import v1UsersRouter from './v1/routes/user.routes.js';
 // Inicializa la aplicacion de express
 const app = express();
 
-// Middleware para parsear el body de las peticiones
+// Middleware para parsear el body de las peticiones en formato JSON
 app.use(express.json());
 
 // Middleware para loggear las peticiones de usuarios
