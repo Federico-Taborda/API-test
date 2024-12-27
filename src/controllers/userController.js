@@ -6,8 +6,11 @@ const getAllUsers = (req, res) => {
 };
   
 const getOneUser = (req, res) => {
-    const user = userService.getOneUser();
-    res.send("Get an existing User");
+    const { params: { userId }, } = req;
+    if(!userId) return;
+
+    const user = userService.getOneUser(userId);
+    res.send({status: "OK", data: user});
 };
   
 const createNewUser = (req, res) => {
@@ -21,13 +24,19 @@ const createNewUser = (req, res) => {
 };
   
 const updateUser = (req, res) => {
-    const updatedUser = userService.updateUser();
-    res.send("Update an existing User");
+    const { params: { userId }, body } = req;
+    if(!userId) return;
+
+    const updatedUser = userService.updateUser(userId, body);
+    res.send({status: "OK", data: updatedUser});
 };
   
 const deleteUser = (req, res) => {
-    const deletedUser = userService.deleteUser();
-    res.send("Delete an existing User");
+    const { params: { userId } } = req;
+    if(!userId) return;
+
+    userService.deleteUser(userId);
+    res.status(204).send({status: "OK"});
 };
   
 export default {

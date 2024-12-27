@@ -1,22 +1,22 @@
 {
-    "users": [
-      {
-        "id": "61dbae02-c147-4e28-863c-db7bd402b2d6",
-        "name": "Federico",
-        "createdAt": "4/20/2022, 2:21:56 PM",
-        "updatedAt": "4/20/2022, 2:21:56 PM"
-      },
-      {
-        "id": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
-        "name": "Cristian",
-        "createdAt": "1/25/2022, 1:15:44 PM",
-        "updatedAt": "3/10/2022, 8:21:56 AM"
-      },
-      {
-        "id": "d8be2362-7b68-4ea4-a1f6-03f8bc4eede7",
-        "name": "Santiago",
-        "createdAt": "11/20/2021, 5:39:07 PM",
-        "updatedAt": "11/20/2021, 5:39:07 PM"
-      }
-    ]
+  "users": [
+    {
+      "id": "61dbae02-c147-4e28-863c-db7bd402b2d6",
+      "name": "Federico",
+      "createdAt": "4/20/2022, 2:21:56 PM",
+      "updatedAt": "4/20/2022, 2:21:56 PM"
+    },
+    {
+      "id": "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
+      "name": "Cristian",
+      "createdAt": "1/25/2022, 1:15:44 PM",
+      "updatedAt": "3/10/2022, 8:21:56 AM"
+    },
+    {
+      "name": "Gabriel",
+      "id": "9bce2c09-ec52-4771-a366-3b83702f3831",
+      "createdAt": "12/27/2024, 2:22:57 AM",
+      "updatedAt": "12/27/2024, 2:22:57 AM"
+    }
+  ]
 }

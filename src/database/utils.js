@@ -6,4 +6,4 @@ const saveToDatabase = (DB) => {
   });
 };
 
-export default { saveToDatabase };
+export { saveToDatabase };

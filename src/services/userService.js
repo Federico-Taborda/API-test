@@ -1,31 +1,37 @@
 // Es una buena practica nombrar los metodos de los servicios con el mismo nombre que del controlador
 
 import user from "../database/user.js";
+import { v4 as uuidv4 } from 'uuid';
 
-const getAllUsers = (req, res) => {
+const getAllUsers = () => {
     const allUsers = user.getAllUsers();
     return allUsers;
 };
   
-const getOneUser = (req, res) => {
-    return;
+const getOneUser = (userId) => {
+    const getUser = user.getOneUser(userId);
+    return getUser;
 };
   
-const createNewUser = (req, res) => {
-    const isAlreadyAdded = DB.users.findIndex((user) => user.name === newUser.name) > -1;
-    if (isAlreadyAdded) return;
+const createNewUser = (newUser) => {
+    const userToInsert = {
+        ...newUser,
+        id: uuidv4(),
+        createdAt: new Date().toLocaleString("en-US", {timeZone: "UTC"}),
+        updatedAt: new Date().toLocaleString("en-US", {timeZone: "UTC"}),
+    }
 
-    DB. users.push(newUser);
-    saveToDatabase(DB);
-    return newUser;
+    const createdUser = user.createNewUser(userToInsert);
+    return createdUser;
 };
   
-const updateUser = (req, res) => {
-    return;
+const updateUser = (userId, changes) => {
+    const updatedUser = user.updateUser(userId, changes);
+    return updatedUser;
 };
   
-const deleteUser = (req, res) => {
-    return;
+const deleteUser = (userId) => {
+    user.deleteUser(userId);
 };
   
 export default {
