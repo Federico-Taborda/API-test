@@ -14,7 +14,7 @@ const getAllUsers = () => {
 const getOneUser = (userId) => {
     try {
         const user = DB.users.find((user) => user.id === userId);
-        if(!user) throw { status: 400, message: "User not found." };
+        if(!user) throw { status: 404, message: "User not found." };
 
         return user;
     } catch (error) {
@@ -44,7 +44,7 @@ const updateUser = (userId, changes) => {
         if (isAlreadyAdded) throw { status: 400, message: "User already exists." };
         
         const indexForUpdate = DB.users.findIndex((user) => user.id === userId);
-        if (indexForUpdate === -1) throw { status: 400, message: "Cannot find user" };
+        if (indexForUpdate === -1) throw { status: 404, message: "Cannot find user" };
 
         const updatedUser = { 
             ...DB.users[indexForUpdate],
@@ -64,7 +64,7 @@ const updateUser = (userId, changes) => {
 const deleteUser = (userId) => {
     try {
         const indexForDelete = DB.users.findIndex((user) => user.id === userId);
-        if (indexForDelete === -1) throw { status: 400, message: "Cannot find user" };
+        if (indexForDelete === -1) throw { status: 404, message: "Cannot find user" };
     
         DB.users.splice(indexForDelete, 1);
         saveToDatabase(DB);
